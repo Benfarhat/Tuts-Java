@@ -40,6 +40,28 @@ public class App {
 
 		}
 		
+
+		System.out.println("*************");
+		System.out.println("* Group by & Summing quantity  *");
+		System.out.println("*************\n");
+		
+		
+		Map<String, Integer> groupSumming = products.stream()
+				.collect(Collectors.groupingBy(Product::getManufacturer, Collectors.summingInt(Product::getQuantity)));
+		
+		System.out.println(groupSumming);
+
+		System.out.println("*************");
+		System.out.println("* Details  *");
+		System.out.println("*************\n");	
+		
+		for(Entry<String, Integer> entry : groupSumming.entrySet()) {
+			
+			System.out.println("key: " + entry.getKey());
+			System.out.println("value : " + entry.getValue());
+
+		}
+		
 			
 
 	}
