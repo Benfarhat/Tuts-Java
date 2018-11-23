@@ -8,6 +8,7 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjusters;
 
 public class App {
 
@@ -17,6 +18,9 @@ public class App {
 		
 		today = LocalDateTime.of(LocalDate.now(), LocalTime.now());
 		System.out.println("Current Datetime: " + today);
+
+		System.out.println("First day of this month: " + (today.with(TemporalAdjusters.firstDayOfMonth())).getDayOfWeek());
+		System.out.println("First day of this year: " + (today.with(TemporalAdjusters.firstDayOfYear())).getDayOfWeek());
 		
 		LocalDateTime specificDate = LocalDateTime.of(2019, Month.JANUARY, 1, 9, 30, 30);
 		System.out.println("Specific Date: " + specificDate);
@@ -29,7 +33,6 @@ public class App {
 
 		System.out.println("Year from 1983/01/01 (ARPANET switch from NCP to TCP/IP): " + (LocalDateTime.of(1983, 1, 1, 0, 0, 0)).until(today, ChronoUnit.YEARS));
 
-	
 		
 	}
 
