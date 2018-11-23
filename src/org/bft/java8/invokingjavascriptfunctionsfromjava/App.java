@@ -4,6 +4,7 @@ import java.io.FileReader;
 import java.util.List;
 
 import javax.script.Bindings;
+import javax.script.Invocable;
 import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineFactory;
@@ -58,6 +59,18 @@ public class App {
 			// Let's call to the compteur variable in another context
 			// -> ReferenceError will occcurs
 			se.eval("print(compteur)", newContext);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		System.out.println("\n===============Invocable=================\n");
+		try {
+			Invocable i1 = (Invocable)se;
+			Invocable i2 = (Invocable)se;
+
+			i1.invokeFunction("fn1", "World");
+			i2.invokeFunction("fn2", 3, 5);
+			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
