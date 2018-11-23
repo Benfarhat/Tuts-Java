@@ -3,12 +3,16 @@ package org.bft.java8.localdate;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 
 public class App {
 
 	public static void main(String[] args) {
 		LocalDate today = LocalDate.now();
 		System.out.println("Current Date: " + today);
+		
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+		System.out.println("Another format (\"dd/MM/YYYY\"): " + formatter.format(today));
 
 		System.out.println("After 1 month : " + today.plusMonths(1));
 		System.out.println("After 100 days : " + today.plusDays(100));
@@ -35,3 +39,4 @@ public class App {
 	}
 
 }
+
