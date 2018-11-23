@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Stream;
 
 public class App {
 
@@ -18,7 +19,7 @@ public class App {
 			List<String> lines = Files.readAllLines(filePath);
 			int nb = 1;
 			for(String line : lines) {
-				System.out.println("Line " + nb++ + ": " + line);
+				System.out.println("A Line " + nb++ + ": " + line);
 			}
 			
 			// Another one
@@ -26,7 +27,15 @@ public class App {
 			Files.readAllLines(filePath)
 			.stream()
 			.forEach(line -> {
-				System.out.println(count.getAndIncrement() + ": " +  line);
+				System.out.println("B Line " + count.getAndIncrement() + ": " +  line);
+			});
+			
+			// Third way
+			count.set(0);
+			Stream stream = Files.lines(filePath);
+			
+			stream.forEach(line -> {
+				System.out.println("C Line " + count.getAndIncrement() + ": " +  line);
 			});
 			
 		} catch (Exception e) {
