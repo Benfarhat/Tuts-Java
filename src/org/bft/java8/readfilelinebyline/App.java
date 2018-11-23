@@ -1,5 +1,6 @@
 package org.bft.java8.readfilelinebyline;
 
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -37,6 +38,10 @@ public class App {
 			stream.forEach(line -> {
 				System.out.println("C Line " + count.getAndIncrement() + ": " +  line);
 			});
+			
+			// Fourth one (it's more a sort of import in a string than reading line by line)
+			
+			System.out.println(Files.readAllLines(filePath, Charset.forName("UTF-8")));
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
