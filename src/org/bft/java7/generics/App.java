@@ -181,9 +181,9 @@ public class App {
 		System.out.println("Comparing " + p1 + " and " + p3);
 		System.out.println(compare(p1,p3));
 		
-		displayProduct(new Product("product P1", "mobile 1", 1000, 2, "Manufacturer 1"));
-		displayProduct(new SubProduct("subproduct p1", "mobile 1", 1000, 2, "Manufacturer 1"));
-		displayProduct(new NoSubProduct("nosubproduct p1", "mobile 1", 1000, 2, "Manufacturer 1"));
+		displayProduct(new Product("product P1", "Lorem", 1000, 2, "Ipsum"));
+		displayProduct(new SubProduct("subproduct p1", "Lorem", 1000, 2, "Ipsum"));
+		displayProduct(new NoSubProduct("nosubproduct p1", "Lorem", 1000, 2, "Ipsum"));
 	}
 	
 	// Generic Methods
