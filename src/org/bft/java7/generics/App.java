@@ -150,7 +150,7 @@ public class App {
 
 	public static void main(String[] args) {
 
-		// No more casts
+		// No more casts (java 5)
 		
 		List list1 = new ArrayList();
 		list1.add("hello");
@@ -161,6 +161,13 @@ public class App {
 		list2.add("hello");
 		String s2 = list2.get(0);
 		System.out.println(s2);
+		
+		// Using Diamond Operator (java 7)
+		
+		List<String> list3 = new ArrayList<>();
+		list3.add("hello");
+		String s3 = list3.get(0);
+		System.out.println(s3);
 		
 		// Using Generic class
 		
