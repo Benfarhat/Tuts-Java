@@ -14,9 +14,10 @@ public class App {
 
 	public static void main(String[] args) {
 		Runtime r = Runtime.getRuntime(); 
-		System.out.println ("Free : " + r.freeMemory());
+
 		People ja = new People("John", "Doe", 1970);
 		People jb = new People("Jane", "Doe", 1980);
+		
 		System.out.println ("Processors : " + r.availableProcessors());
 		System.out.println ("Total : " + r.totalMemory());
 		System.out.println ("Max : " + r.maxMemory());
@@ -27,11 +28,7 @@ public class App {
 	
 		r.gc(); 
 		System.out.println ("Free : " + r.freeMemory());		 
-	
-		ja = new People("John", "Doe", 1970);
-		jb = new People("Jane", "Doe", 1980);	 
-		r.gc(); 
-		System.out.println ("Free : " + r.freeMemory());
+
 	}
 	
 	
